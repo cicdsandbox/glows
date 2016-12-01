@@ -1,0 +1,19 @@
+version: '2'
+services:
+  angular_frontend:
+    image: nginx
+    ports:
+     - "80:80"
+    volumes:
+     - ./AngularJS_Frontend:/usr/share/nginx/html
+    depends_on:
+     - glows_backend
+     - scheduling_backend
+  glows_backend:
+    image: glows/glows-service
+    ports:
+     - "8080:8080"
+  scheduling_backend:
+    image: glows/scheduling-service
+    ports:
+     - "8081:8080"
