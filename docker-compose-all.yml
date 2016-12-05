@@ -5,7 +5,7 @@ services:
     ports:
      - "80:80"
     volumes:
-     - ./AngularJS_Frontend:/usr/share/nginx/html
+     - ../frontend:/usr/share/nginx/html
     depends_on:
      - glows_backend
      - scheduling_backend
